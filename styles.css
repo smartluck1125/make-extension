@@ -1,0 +1,279 @@
+/* Reset some default styles */
+body, h1, h2, div {
+    margin: 0;
+    padding: 0;
+    font-family: 'Caveat', cursive;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Center-align the content vertically and horizontally */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 550px; /* Fixed height for the container */
+    width: 350px;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Style the page title */
+h1 {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+/* Style the subtitle */
+h2 {
+    font-size: 22px;
+}
+
+/* Style action buttons */
+.action-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #0077cc;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    margin: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.action-button:hover {
+    background-color: #0055aa;
+}
+
+.action-button-red {
+    background-color: #dc2626;
+}
+
+.action-button-red:hover {
+    background-color: #c02626;
+}
+
+.deny-button {
+    background-color: red;
+}
+
+.deny-button:hover {
+    background-color: black;
+}
+
+.logo-medium {
+    width: 200px;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.full-screen {
+    display: flex;
+    flex-direction: column;
+    height: 550px; /* Fixed height for the container */
+    width: 350px;
+}
+
+.profile-image {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+}
+
+.profile-image-small {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+}
+
+.status {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid #CCC;
+    margin-bottom: 2px;
+    background-color: green;
+    position: absolute;
+}
+
+.topRight {
+    top: 5;
+    right: 5;
+}
+
+.spinner {
+    position: relative;
+    width: 70px;
+    height: 70px;
+}
+
+.spinner:before,
+.spinner:after {
+    content: '';
+    border-radius: 50%;
+    position: absolute;
+    inset: 0;
+    box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0) inset;
+}
+
+.spinner:after {
+    box-shadow: 0 4px 0 #007bff inset;
+    animation: rotate 2s linear infinite;
+}
+
+.spinner-large {
+    width: 150px;
+    height: 150px;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0)
+    }
+
+    100% {
+        transform: rotate(360deg)
+    }
+}
+
+.error-message {
+    background-color: #ffe9e9;
+    color: #ef3030;
+    border: 2px solid #ef3030;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 15px;
+    margin: 20px 0px;
+    text-align: left;
+}
+
+.info-message-hide {
+    transform: scaleY(0);
+    transition: transform 400ms ease 0ms;
+    background-color: #def9e9;
+    color: #1fb74c;
+    border: 2px solid #1fb74c;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 15px;
+    margin: 20px 0px;
+    text-align: center;
+}
+
+.info-message {
+    transform: scaleY(1);
+    transition: transform 400ms ease 0ms;
+    background-color: #def9e9;
+    color: #1fb74c;
+    border: 2px solid #1fb74c;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 15px;
+    margin: 20px 0px;
+    text-align: center;
+}
+
+.text-gray {
+    color: gray;
+    font-weight: 200;
+}
+
+.text-small {
+    font-size: 12px;
+}
+
+.dropdown {
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.dropdown > option {
+    padding: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+#cancelCustomProxy {
+    display: flex;
+    justify-content: flex-end;
+    align-self: flex-end;
+    color: #dc2626;
+    cursor: pointer;
+}
+
+#cancelCustomProxy:hover {
+    color: #c02626;
+}
+
+#customProxyButton {
+    justify-content: center;
+}
+
+#customProxyButton:hover {
+    cursor: pointer;
+}
+
+#customProxyInput {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    width: 100%;
+    border: black 1px solid;
+    border-radius: 10px;
+    justify-content: center;
+    padding-bottom: 1vh;
+    padding-top: 0.5vh;
+}
+
+#customProxyInput > * {
+    width: 95.5%;
+}
+
+#customProxySection {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.5vh;
+    align-items: center;
+    width: 100%;
+}
+
+label {
+    font-size: medium;
+}
+
+#customProxyForm {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+}
+
+#customProxyForm > input {
+    width: 100%;
+}
+
+#liLoginNotLoading {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1vh;
+}
+
+#changeAccButton {
+    cursor: pointer;
+}
+
+#customProxyHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.clickable-text {
+    text-decoration-line: underline;
+    color: #0077cc;
+}

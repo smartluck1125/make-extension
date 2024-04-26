@@ -1,0 +1,48 @@
+{
+"update_url": "https://clients2.google.com/service/update2/crx",
+
+  "manifest_version": 3,
+  "name": "HeyReach",
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAuWs4281CsTubOMJD+XOyVKJwdKmzYrHDLEsR4lNEQOPpuyTEum6awicDYIKrexpuplJpRaykN2rD+9ELvvEdVqiw6GaS9B6sWzXaurT0YZakzbyU436d0n28NL9L0RvqKoHRdkEIthPk0gIg38iVZFqBpWkTAaqsut6m+/MNGKQbN++hOrOutu8G1FPcJzMkAHQVZqeha6Zw4D9UHqYvGzgvMURShbzg9/9OsR8/1uiAy8iX3JumNh+KBqpfs6ft7fUSYDGwrFIzVr3JZDwat3YvluSZEIEx0r3QQ8KGaXoR1nAJlH59S6s2ztmaZP+s6yGkhEmuqqOYv+7xyRHVzwIDAQAB",
+  "version": "1.0.4",
+  "description": "A simple extension to link your LinkedIn account and HeyReach",
+  "permissions": ["cookies", "tabs", "declarativeNetRequest", "webNavigation"],
+  "host_permissions": [
+    "*://app.heyreach.io/*",
+    "https://*.linkedin.com/*",
+    "*://api.heyreach.io/*",
+    "http://localhost:4200/*"
+  ],
+  "incognito": "split",
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "rules",
+        "enabled": true,
+        "path": "rules.json"
+      }
+    ]
+  },
+  "externally_connectable": {
+    "matches": [
+      "http://app.heyreach.io/*",
+      "https://app.heyreach.io/*"
+    ]
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  }
+}

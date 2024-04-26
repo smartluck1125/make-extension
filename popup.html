@@ -1,0 +1,111 @@
+<html lang="en">
+<head>
+    <title>HeyReach Extension</title>
+    <script src="env.js"></script>
+    <script src="Utilities/utility.js"></script>
+    <script src="Utilities/browser_utility.js"></script>
+    <script src="Utilities/authentication_utility.js"></script>
+    <script src="Utilities/request_utility.js"></script>
+    <script src="Utilities/heyReach_request_utility.js"></script>
+    <script src="Utilities/linkedIn_request_utility.js"></script>
+    <script src="popup.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <div id="loadingView" class="full-screen">
+        <img class="logo-medium" src="images/logo-black.png" alt="logo">
+        <div style="margin-top: 100px; display: flex; justify-content: center" class="full-width">
+            <div class="spinner spinner-large"></div>
+        </div>
+    </div>
+
+    <div id="guestView" class="full-screen">
+        <img class="logo-medium" src="images/logo-black.png" alt="logo">
+        <div style="margin-top: 100px;">
+            <h1>Welcome</h1>
+            <h3>To use the HeyReach Extension please first link your HeyReach account</h3>
+            <button id="logIntoHeyReachButton" class="action-button">Log into HeyReach</button>
+        </div>
+    </div>
+
+    <div id="loggedInDefaultView" class="full-screen">
+        <img class="logo-medium" src="images/logo-black.png" alt="logo">
+        <div style="margin-top: 100px;">
+            <h2 style="margin-bottom: 30px; display: none;">You are logged in as <span id="loggedInEmail"></span></h2>
+            <h3 style="font-size: 18px; margin-bottom: 40px;">You must be loged into your LinkedIn Account in your
+                browser to connect it to HeyReach</h3>
+            <button id="loginLiAccButton" class="action-button hidden">Connect account to HeyReach</button>
+            <button id="seeConnectedAccountsButton" class="action-button hidden">See my Connected accounts</button>
+            <button id="goToLinkedInButton" class="action-button">Go to LinkedIn</button>
+        </div>
+    </div>
+
+    <div id="logInLinkedInAccountView" class="full-screen">
+        <img class="logo-medium" src="images/logo-black.png" alt="logo">
+        <div style="margin-top: 30px;">
+            <img id="liLoginProfileImage" class="profile-image" style="margin-bottom: 10px;" alt="profile image"
+                 src="images/avatar-empty.png">
+            <h2 id="linkedInAccName" style="margin-bottom: 30px;"></h2>
+            <div id="loginErrorMessage" class="error-message"></div>
+            <div id="liLoginNotLoading">
+                <h2>Connect <span id="liAccFirstName"></span> to HeyReach?</h2>
+                <div>
+                    <h3 style="margin-bottom: 3px;">Select which conversations to load into HeyReach:</h3>
+                    <select name="inboxConfig" id="inboxConfig" class="dropdown">
+                        <option value="0">All conversations from last 30 days (and all future)</option>
+                        <option value="1">Only future conversations (from now)</option>
+                        <option value="2">Only conversations started from HeyReach</option>
+                    </select>
+                </div>
+                <div id="customProxySection">
+                    <h3 id="customProxyButton" class="clickable-text">Use custom proxy</h3>
+                    <div id="customProxyInput" style="display: none">
+                        <div id="customProxyForm">
+                            <h3><label for="proxyHost">Proxy Host</label></h3>
+                            <input type="text" id="proxyHost">
+                            <h3><label for="proxyPort">Proxy Port</label></h3>
+                            <input type="text" id="proxyPort">
+                            <h3><label for="proxyUser">Proxy User</label></h3>
+                            <input type="text" id="proxyUser">
+                            <h3><label for="proxyPass">Proxy Password</label></h3>
+                            <input type="password" id="proxyPass">
+                        </div>
+                        <div id="customProxyHeader">
+                            <h2>Custom proxy settings</h2>
+                            <h2 id="cancelCustomProxy">X</h2>
+                        </div>
+                    </div>
+                </div>
+                <button id="linkedInLoginConfirmButton" class="action-button">Connect</button>
+                <h3 id="changeAccButton" class="clickable-text">Change Account</h3>
+            </div>
+            <div style="display: flex; justify-content: center;">
+                <div id="liLoginLoading" class="spinner"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="loggedInLinkedInAccountView" class="full-screen">
+        <img class="logo-medium" src="images/logo-black.png" alt="logo">
+        <div style="margin-top: 50px;">
+            <div style="position: relative; display: inline-block;">
+                <img id="liLoginProfileImage2" class="profile-image-small" style="margin-bottom: 10px;"
+                     alt="profile image" src="images/avatar-empty.png">
+                <span class="status topRight">&nbsp</span>
+            </div>
+            <h2 id="linkedInAccName2" style="margin-bottom: 5px; padding-bottom: 3px;"></h2>
+            <h6 class="text-gray text-small" style="margin-bottom: 80px; margin-top: 5px;">is logged into HeyReach</h6>
+            <div id="successLoginMessage" class="info-message-hide">Successfully logged in</div>
+            <div>
+                <button id="disconnectAccountButton" class="action-button">Disconnect Account</button>
+                <button id="loginOtherAccountButton" class="action-button">Connect Another Account</button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

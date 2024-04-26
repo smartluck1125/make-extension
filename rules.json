@@ -1,0 +1,15 @@
+[
+    {
+        "id": 1,
+        "priority": 2,
+        "action": {
+            "type": "block"
+        },
+        "condition": {
+            "urlFilter": "https://www.linkedin.com/uas/logout*",
+            "resourceTypes": [
+                "main_frame"
+            ]
+        }
+    }
+]
